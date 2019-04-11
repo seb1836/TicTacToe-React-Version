@@ -1,0 +1,17 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.myTable {
+  border: solid;
+  width: 100px;
+  height: 100px;
+}
+
+.row {
+  border: solid, black 1px;
+}
+
+.data {
+  border: solid;
+}
