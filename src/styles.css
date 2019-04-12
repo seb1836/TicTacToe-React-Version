@@ -6,12 +6,10 @@
   border: solid;
   width: 100px;
   height: 100px;
-}
-
-.row {
-  border: solid, black 1px;
+  border-collapse: collapse;
 }
 
 .data {
   border: solid;
+  border-collapse: collapse;
 }
