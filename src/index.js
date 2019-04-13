@@ -6,8 +6,8 @@ import "./styles.css";
 
 class App extends Component {
   state = {
-    sign: "",
-    signStored: "X"
+    sign: "X",
+    map: ["", "", "", "", "", "", "", "", ""]
   };
   setSign = () => {
     /*this.state.signStored === "X"||
@@ -16,31 +16,31 @@ class App extends Component {
     this.setState({
       sign: this.state.sign === "X" || this.state.sign === "" ? "X" : "O"
     });
-    return this.state.sign;
   };
 
   /*handleClick = () => {
     this.setState({ sign: this.setSign() });
   };*/
+
   render() {
     return (
       <div className="App">
         <table className="myTable">
           <tbody>
             <tr className="row">
-              <Case setSign={this.setSign} sign={this.state.sign} />
-              <Case setSign={this.setSign} sign={this.state.sign} />
-              <Case setSign={this.setSign} sign={this.state.sign} />
+              <Case setSign={this.setSign} case={this.state.map[0]} />
+              <Case setSign={this.setSign} case={this.state.map[1]} />
+              <Case setSign={this.setSign} case={this.state.map[2]} />
             </tr>
             <tr className="row">
-              <Case setSign={this.setSign} sign={this.state.sign} />
-              <Case setSign={this.setSign} sign={this.state.sign} />
-              <Case setSign={this.setSign} sign={this.state.sign} />
+              <Case setSign={this.setSign} case={this.state.map[3]} />
+              <Case setSign={this.setSign} case={this.state.map[4]} />
+              <Case setSign={this.setSign} case={this.state.map[5]} />
             </tr>
             <tr className="row">
-              <Case setSign={this.setSign} sign={this.state.sign} />
-              <Case setSign={this.setSign} sign={this.state.sign} />
-              <Case setSign={this.setSign} sign={this.state.sign} />
+              <Case setSign={this.setSign} case={this.state.map[6]} />
+              <Case setSign={this.setSign} case={this.state.map[7]} />
+              <Case setSign={this.setSign} case={this.state.map[8]} />
             </tr>
           </tbody>
         </table>
