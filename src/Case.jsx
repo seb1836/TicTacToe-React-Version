@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class Case extends Component {
-  SignDisplay() {
+  /* SignDisplay() {
     return this.props.caseClicked ? (
       <td className="data" onClick={this.props.setSign}>
         {this.props.sign}
@@ -9,14 +9,22 @@ class Case extends Component {
     ) : (
       <td className="data" onClick={this.props.case} />
     );
-  }
+  }*/
+  handleClick = () => {
+    this.props.setSign(this.props.index);
+  };
+
   render() {
-    return this.SignDisplay();
-    /*(
-      <td className="data" onClick={this.props.setSign}>
+    return (
+      <td
+        className="data"
+        onClick={
+          this.handleClick
+        } /*onClick={() => this.props.setSign(this.props.index)}*/
+      >
         {this.props.sign}
       </td>
-    );*/
+    );
   }
 }
 
