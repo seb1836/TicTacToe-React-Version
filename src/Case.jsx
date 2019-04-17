@@ -11,7 +11,7 @@ class Case extends Component {
     );
   }*/
   handleClick = () => {
-    this.props.setSign(this.props.index);
+    this.props.sign === "" ? this.props.setSign(this.props.index) : null;
   };
 
   render() {
