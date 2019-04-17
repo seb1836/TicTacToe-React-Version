@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+let currentCoordinates = [["", "", ""], ["", "", ""], ["", "", ""]];
+
 class Case extends Component {
   /* SignDisplay() {
     return this.props.caseClicked ? (
