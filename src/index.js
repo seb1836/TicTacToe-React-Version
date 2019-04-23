@@ -4,8 +4,6 @@ import Case from "./Case";
 
 import "./styles.css";
 
-let count = 0;
-
 const winningCoordinates = [
   [0, 1, 2],
   [3, 4, 5],
@@ -22,16 +20,19 @@ class App extends Component {
     map: ["", "", "", "", "", "", "", "", ""]
   };
 
-  checkWinner = i => {
+  checkWinner = () => {
     winningCoordinates.map(function(row) {
-      return row.map(function(cell) {
-        if (cell === i && count < 3) {
-          count++;
-          console.log(cell);
-        } else if (count === 3) {
-          return console.log(`${this.currentSign} is winner `);
-        }
-      });
+      console.log(this.state.map[row[0]]);
+
+      if (
+        this.state.map[row[0]] === this.state.currentSign &&
+        this.state.map[row[1]] === this.state.currentSign &&
+        this.state.map[row[2]] === this.state.currentSign
+      ) {
+        () => {
+          console.log(`${this.state.currentSign} is winner `);
+        };
+      }
     });
   };
 
@@ -39,17 +40,19 @@ class App extends Component {
     /*this.state.signStored === "X"||
       ? this.setState({ sign: "X", signStored: "O" })
       : this.setState({ sign: "O", signStored: "X" });*/
-    this.setState({
-      currentSign:
-        this.state.currentSign === "X" || this.state.currentSign === ""
-          ? "O"
-          : "X",
-      map: this.state.map.fill(this.state.currentSign, i, i + 1)
-    });
-
-    this.checkWinner(i);
+    this.setState(
+      {
+        currentSign:
+          this.state.currentSign === "X" || this.state.currentSign === ""
+            ? "O"
+            : "X",
+        map: this.state.map.fill(this.state.currentSign, i, i + 1)
+      },
+      () => {
+        this.checkWinner();
+      }
+    );
   };
-
   /*handleClick = () => {
     this.setState({ sign: this.setSign() });
   };*/
