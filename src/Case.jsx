@@ -11,7 +11,11 @@ class Case extends Component {
     );
   }*/
   handleClick = () => {
-    this.props.sign === "" ? this.props.setSign(this.props.index) : null;
+    this.props.sign === "" && !this.props.winner
+      ? this.props.setSign(this.props.index)
+      : null;
+    //this.props.winner ? console.log(`${this.props.currentSign} is winnerdf`) : null
+    this.props.checkWinner();
   };
 
   render() {
